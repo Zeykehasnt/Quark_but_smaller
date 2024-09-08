@@ -82,7 +82,7 @@ repositories {
     mavenLocal()
 
     maven {
-        // for Zeta
+        // for Zeta and JEI
         name "blamejared"
         url "https://maven.blamejared.com"
         content {
