@@ -49,7 +49,7 @@ public class Quark {
 
 	public Quark() {
 		instance = this;
-		
+
 		ZETA.start();
 
 		proxy = Env.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);

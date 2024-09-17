@@ -105,8 +105,10 @@ public class GrabChickensModule extends ZetaModule {
 	private boolean canPlayerHostChicken(Player player) {
 		//check for known player classes as to avoid fake players (impls)
 		var playerClass = player.getClass();
-		if (playerClass != ServerPlayer.class && !Client.isClientPlayerClass(playerClass))
-			return false;
+		if(player.level().isClientSide){
+			if(!Client.isClientPlayerClass(playerClass)) return false;
+		}else if (playerClass != ServerPlayer.class) return false;
+
 		return (!needsNoHelmet || player.getItemBySlot(EquipmentSlot.HEAD).isEmpty()) && !player.isUnderWater();
 	}
 
