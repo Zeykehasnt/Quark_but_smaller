@@ -13,6 +13,10 @@
     {
       "type": "quark:flag",
         "flag": "vertical_slabs"
+    },
+    {
+      "type": "quark:flag",
+      "flag": "thatch"
     }
   ]
 } 

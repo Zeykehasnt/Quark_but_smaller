@@ -1,8 +1,11 @@
 package org.violetmoon.quark.content.tweaks.module;
 
 import net.minecraft.client.model.ChickenModel;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.player.RemotePlayer;
 import net.minecraft.network.protocol.game.ClientboundSetPassengersPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -100,10 +103,18 @@ public class GrabChickensModule extends ZetaModule {
 	}
 
 	private boolean canPlayerHostChicken(Player player) {
+		//check for known player classes as to avoid fake players (impls)
+		var playerClass = player.getClass();
+		if (playerClass != ServerPlayer.class && !Client.isClientPlayerClass(playerClass))
+			return false;
 		return (!needsNoHelmet || player.getItemBySlot(EquipmentSlot.HEAD).isEmpty()) && !player.isUnderWater();
 	}
 
 	public static class Client {
+
+		public static boolean isClientPlayerClass(Class<?> playerClass){
+			return playerClass == RemotePlayer.class || playerClass == LocalPlayer.class;
+		}
 
 		//not client-replacement module since it's just somewhere to stick this method
 		public static void setRenderChickenFeetStatus(Chicken entity, ChickenModel<Chicken> model) {

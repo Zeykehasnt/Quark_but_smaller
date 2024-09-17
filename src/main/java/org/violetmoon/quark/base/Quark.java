@@ -3,6 +3,7 @@ package org.violetmoon.quark.base;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,14 +26,14 @@ import org.violetmoon.zetaimplforge.ForgeZeta;
 public class Quark {
 
 	public static final String MOD_ID = "quark";
-	public static final String ODDITIES_ID = Utils.isDevEnv() ? "quark" : "quarkoddities";
-
-	public static Quark instance;
-	public static CommonProxy proxy;
 
 	public static final Logger LOG = LogManager.getLogger(MOD_ID);
 
 	public static final Zeta ZETA = new ForgeZeta(MOD_ID, LogManager.getLogger("quark-zeta"));
+	public static final String ODDITIES_ID = ZETA.isProduction ? "quarkoddities" : "quarkoddities";
+
+	public static Quark instance;
+	public static CommonProxy proxy;
 
 	public static final IClaimIntegration FLAN_INTEGRATION = ZETA.modIntegration("flan",
 			() -> FlanIntegration::new,
@@ -48,13 +49,13 @@ public class Quark {
 
 	public Quark() {
 		instance = this;
-
+		
 		ZETA.start();
 
 		proxy = Env.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 		proxy.start();
 
-		if (Utils.isDevEnv()) // force all mixins to load in dev
+		if (!ZETA.isProduction) // force all mixins to load in dev
 			MixinEnvironment.getCurrentEnvironment().audit();
 	}
 

@@ -19,6 +19,7 @@ import org.violetmoon.quark.content.client.resources.AttributeIconEntry;
 import org.violetmoon.quark.content.client.resources.AttributeIconEntry.CompareType;
 import org.violetmoon.quark.content.client.resources.AttributeSlot;
 import org.violetmoon.zeta.client.event.play.ZGatherTooltipComponents;
+import org.violetmoon.zeta.event.play.loading.ZGatherHints;
 import org.violetmoon.zeta.util.ItemNBTHelper;
 
 import com.google.common.collect.ImmutableMultimap;
