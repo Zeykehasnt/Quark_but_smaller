@@ -454,7 +454,7 @@
 	"quark.misc.only_one_quill": "開拓者の羽根ペンは既に検索中です…",
 	"quark.misc.quill_finished": "開拓地図が完成しました",
 	"quark.misc.quill_failed": "開拓者の羽根ペンはバイオームを見つけることができませんでした",
-	"quark.misc.quill_retry": "開拓者の羽根ペンはバイオームを見つけることができませんでした。他の場所で試してください",
+	"quark.misc.quill_retry": "開拓者の羽根ペンはバイオームを見つけることができませんでした。他の場所でお試しください",
 	"quark.misc.quill_blank": "空",
 	"quark.misc.quill_searching": "検索中",
 	"quark.misc.variant_tooltip_hold_shift": "（SHIFTで種類を表示）",
