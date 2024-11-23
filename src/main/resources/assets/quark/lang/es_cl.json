@@ -606,7 +606,7 @@
 	"block.quark.nether_wart_sack": "Saco de verrugas del Nether",
 	"block.quark.potato_crate": "Cajón de papas",
 	"block.quark.apple_crate": "Cajón de manzanas",
-	"block.quark.beetroot_crate": "Cajón de remolachas",
+	"block.quark.beetroot_crate": "Cajón de betarragas",
 	"block.quark.carrot_crate": "Cajón de zanahorias",
 	"block.quark.stick_block": "Montón de palos",
 	"block.quark.dirty_glass": "Vidrio sucio",
@@ -1099,7 +1099,7 @@
 	"entity.quark.quark_chest_boat": "Bote con cofre",
 
 	"block.quark.magnetized_block": "Bloque magnetizado",
-	"block.quark.potted_beetroot": "Macetero con remolacha",
+	"block.quark.potted_beetroot": "Macetero con betarraga",
 	"block.quark.potted_berries": "Macetero con arbusto de bayas dulces",
 	"block.quark.potted_blue_blossom_sapling": "Macetero con brote floral frío",
 	"block.quark.potted_carrot": "Macetero con zanahoria",
