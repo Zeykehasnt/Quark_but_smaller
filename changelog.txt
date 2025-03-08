@@ -1,4 +1,3 @@
-- fixed grate blocking chute drops
-- fixed magnets not pushing breakable blocks
-- fixed a type in pulled by magnets tag
-- fake players can no longer hold chickens
+- many fixes thanks to many PRs from the community
+- fixed crate and crafter tile entities not having correct isValid method causing crashes when using the menu and breaking the block
+- added tag for where oretoises can spawn in

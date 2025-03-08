@@ -32,6 +32,7 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 
 import org.violetmoon.quark.content.automation.block.CrafterBlock;
+import org.violetmoon.quark.content.automation.client.screen.CrafterScreen;
 import org.violetmoon.quark.content.automation.inventory.CrafterMenu;
 import org.violetmoon.quark.content.automation.module.CrafterModule;
 
@@ -192,9 +193,9 @@ public class CrafterBlockEntity extends BaseContainerBlockEntity implements Craf
 	public void takeItems() {
 		NonNullList<ItemStack> defaultedList = level.getRecipeManager().getRemainingItemsFor(RecipeType.CRAFTING, this, level);
 
-		if(level instanceof ServerLevel serverLevel) {
+		if (level instanceof ServerLevel serverLevel) {
 			BlockSource blockSource = new BlockSourceImpl(serverLevel, worldPosition);
-			for(int i = 0; i < defaultedList.size(); ++i) {
+			for (int i = 0; i < defaultedList.size(); ++i) {
 				ItemStack itemInCrafter = this.getItem(i);
 				ItemStack remainingItem = defaultedList.get(i);
 				
@@ -247,7 +248,7 @@ public class CrafterBlockEntity extends BaseContainerBlockEntity implements Craf
 
 	@Override
 	public boolean stillValid(Player player) {
-		return true;
+		return Container.stillValidBlockEntity(this, player);
 	}
 
 	@Override
